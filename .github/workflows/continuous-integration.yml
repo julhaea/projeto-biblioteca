@@ -1,26 +1,24 @@
-# Run continuous integration
+name: Continuous Integration
 
 on:
   push:
-    branches:
-      - '*'
+    branches: [ '*' ]
   pull_request:
-    branches:
-      - '*'
+    branches: [ '*' ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4  # Atualize para a versão mais recente
+
       - name: Set up Java
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v3  # Use v3 (versão estável mais nova)
         with:
           distribution: 'temurin'
           java-version: '17'
-          check-latest: false
-          cache: 'maven'
+          cache: 'maven'  # Mantém o cache, mas agora com v3 funciona melhor
+
       - name: Build with Maven
-        run: 'mvn package'
-        shell: bash
+        run: mvn -B package --file pom.xml  # Adicione flags para maior confiabilidade
