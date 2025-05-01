@@ -15,7 +15,6 @@ public class Pessoa {
         return idade;
     }
 
-    // Métodos setters
     public void setNome(String nome) {
         this.nome = nome;
     }
