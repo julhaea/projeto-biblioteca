@@ -1,6 +1,9 @@
+package com.mycompany.app;
+
 public class Pessoa {
     protected String nome;
     protected int idade;
+    protected Livro[] livros;
 
     public Pessoa(String nome, int idade) {
         this.nome = nome;
@@ -21,5 +24,13 @@ public class Pessoa {
 
     public void setIdade(int idade) {
         this.idade = idade;
+    }
+
+    public void setLivros(Livro[] livros) {
+        this.livros = livros;
+    }
+
+    public Livro[] getLivros() {
+        return livros;
     }
 }

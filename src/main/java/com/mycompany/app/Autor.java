@@ -1,3 +1,4 @@
+package com.mycompany.app;
 public class Autor extends Pessoa  {
     private String nacionalidade;
 
@@ -10,7 +11,7 @@ public class Autor extends Pessoa  {
         return nacionalidade;
     }
 
-    public void setNacionalidade() {
+    public void setNacionalidade(String nacionalidade) {
         this.nacionalidade = nacionalidade;
     }
 }

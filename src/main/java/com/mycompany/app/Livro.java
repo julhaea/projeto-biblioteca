@@ -1,3 +1,4 @@
+package com.mycompany.app;
 public class Livro {
     private String titulo;
     private Autor autor;
@@ -28,10 +29,6 @@ public class Livro {
     public boolean getDisponivel() {
         return disponivel;
     }
-
-
-
-
 
 
     public void setDisponivel(boolean disponivel) {

@@ -1,0 +1,75 @@
+package com.mycompany.app;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+
+public class LivroTest {
+    @Test
+    public void testGetTitulo() {
+        Autor autor = new Autor("Alan Turing", 50, "Inglês");
+        Livro livro = new Livro("Java Basics", autor, "Tecnologia");
+        assertEquals("Java Basics", livro.getTitulo());
+
+    }
+
+    @Test
+    public void testGetAutor() {
+        Autor autor = new Autor("Alan Turing", 50, "Inglês");
+        Livro livro = new Livro("Java Basics", autor, "Tecnologia");
+        assertEquals(autor, livro.getAutor());
+
+    }
+
+    @Test
+    public void testGetGenero() {
+        Autor autor = new Autor("Alan Turing", 50, "Inglês");
+        Livro livro = new Livro("Java Basics", autor, "Tecnologia");
+        assertEquals("Tecnologia", livro.getGenero());
+
+    }
+
+    @Test
+    public void testGetDisponivel() {
+        Autor autor = new Autor("Alan Turing", 50, "Inglês");
+        Livro livro = new Livro("Java Basics", autor, "Tecnologia");
+        assertTrue(livro.getDisponivel());
+
+    }
+
+    @Test
+    public void testSetDisponivel() {
+        Autor autor = new Autor("Alan Turing", 50, "Inglês");
+        Livro livro = new Livro("Java Basics", autor, "Tecnologia");
+        livro.setDisponivel(false);
+        assertFalse(livro.getDisponivel());
+
+    }
+
+    @Test
+    public void testEmprestar() {
+        Autor autor = new Autor("Alan Turing", 50, "Inglês");
+        Livro livro = new Livro("Java Basics", autor, "Tecnologia");
+        Usuario usuario = new Usuario("Gabriel", 21);
+        livro.emprestar(usuario);
+        assertFalse(livro.getDisponivel());
+
+    }
+
+    @Test
+    public void testDevolver() {
+        Autor autor = new Autor("Alan Turing", 50, "Inglês");
+        Livro livro = new Livro("Java Basics", autor, "Tecnologia");
+        Usuario usuario = new Usuario("Gabriel", 21);
+        livro.emprestar(usuario);
+        livro.devolver();
+        assertTrue(livro.getDisponivel());
+
+    }
+
+
+
+
+}
