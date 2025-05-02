@@ -13,7 +13,7 @@ import com.mycompany.app.Model.Usuario;
 public class LivroTest {
     @Test
     public void testGetTitulo() {
-        Autor autor = new Autor("Alan Turing", 50, "Inglês");
+        Autor autor = new Autor("Alan Turing", 50, "Inglês", true);
         Livro livro = new Livro("Java Basics", autor, "Tecnologia");
         assertEquals("Java Basics", livro.getTitulo());
 
@@ -21,7 +21,7 @@ public class LivroTest {
 
     @Test
     public void testGetAutor() {
-        Autor autor = new Autor("Alan Turing", 50, "Inglês");
+        Autor autor = new Autor("Alan Turing", 50, "Inglês", true);
         Livro livro = new Livro("Java Basics", autor, "Tecnologia");
         assertEquals(autor, livro.getAutor());
 
@@ -29,7 +29,7 @@ public class LivroTest {
 
     @Test
     public void testGetGenero() {
-        Autor autor = new Autor("Alan Turing", 50, "Inglês");
+        Autor autor = new Autor("Alan Turing", 50, "Inglês", true);
         Livro livro = new Livro("Java Basics", autor, "Tecnologia");
         assertEquals("Tecnologia", livro.getGenero());
 
@@ -37,7 +37,7 @@ public class LivroTest {
 
     @Test
     public void testGetDisponivel() {
-        Autor autor = new Autor("Alan Turing", 50, "Inglês");
+        Autor autor = new Autor("Alan Turing", 50, "Inglês", true);
         Livro livro = new Livro("Java Basics", autor, "Tecnologia");
         assertTrue(livro.getDisponivel());
 
@@ -45,7 +45,7 @@ public class LivroTest {
 
     @Test
     public void testSetDisponivel() {
-        Autor autor = new Autor("Alan Turing", 50, "Inglês");
+        Autor autor = new Autor("Alan Turing", 50, "Inglês", true);
         Livro livro = new Livro("Java Basics", autor, "Tecnologia");
         livro.setDisponivel(false);
         assertFalse(livro.getDisponivel());
@@ -54,7 +54,7 @@ public class LivroTest {
 
     @Test
     public void testEmprestar() {
-        Autor autor = new Autor("Alan Turing", 50, "Inglês");
+        Autor autor = new Autor("Alan Turing", 50, "Inglês", true);
         Livro livro = new Livro("Java Basics", autor, "Tecnologia");
         Usuario usuario = new Usuario("Gabriel", 21);
         livro.emprestar(usuario);
@@ -64,7 +64,7 @@ public class LivroTest {
 
     @Test
     public void testDevolver() {
-        Autor autor = new Autor("Alan Turing", 50, "Inglês");
+        Autor autor = new Autor("Alan Turing", 50, "Inglês", true);
         Livro livro = new Livro("Java Basics", autor, "Tecnologia");
         Usuario usuario = new Usuario("Gabriel", 21);
         livro.emprestar(usuario);

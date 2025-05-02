@@ -1,5 +1,6 @@
 package com.mycompany.app;
 
+import com.mycompany.app.Model.Artigo;
 import com.mycompany.app.Model.Autor;
 import com.mycompany.app.Model.Emprestimo;
 import com.mycompany.app.Model.Livro;
@@ -7,9 +8,11 @@ import com.mycompany.app.Model.Usuario;
 
 public class Main {
     public static void main (String[] args) {
-        Autor autor = new Autor ("Jessica Felix", 36, "Brasileira" );
+        Autor autor = new Autor ("Jessica Felix", 36, "Brasileira", true);
         Livro livro = new Livro("Java for Begginers", autor, "Tecnologia");
         Usuario usuario =  new Usuario ("Lucas Rafael", 25);
+        Artigo artigo = new Artigo ("Entendendo Compiladores", new Autor (usuario.getNome(), usuario.getIdade(), "Brasileiro", false), "Tecnologia", true);
+
 
         livro.emprestar(usuario);
 
@@ -29,6 +32,16 @@ public class Main {
             System.out.println("Data de Retirada: " + emp.getDataRetirada());
             System.out.println("Data de Devolucao: " + emp.getDataDevolucao());
         }
+
+        if (artigo.isPublicado()){
+            
+            System.out.println("O Artigo está publicado");
+            System.out.println("Artigo: " + artigo.getTitulo());
+            System.out.println("Autor: " + artigo.getAutor().getNome());
+            System.out.println("Genero: " + artigo.getGenero());
+        }
+
+    
     }
 }
     

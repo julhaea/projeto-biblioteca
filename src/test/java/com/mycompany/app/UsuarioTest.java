@@ -17,7 +17,7 @@ public class UsuarioTest {
     @Test
     public void testAdicionarEmprestimo(){
         Usuario usuario = new Usuario("Gabriel", 21);
-        Livro livro = new Livro("Java Basics", new Autor("Alan Turing", 50, "Inglês"), "Tecnologia");
+        Livro livro = new Livro("Java Basics", new Autor("Alan Turing", 50, "Inglês", true), "Tecnologia");
         Emprestimo emprestimo = new Emprestimo(livro, usuario);
         List<Emprestimo> historico = new ArrayList<>();
         historico.add(emprestimo);
@@ -27,7 +27,7 @@ public class UsuarioTest {
 
     @Test
     public void testGetHistoricoEmprestimos(){
-        Autor autor = new Autor ("Jessica Felix", 25, "Brasileira" );
+        Autor autor = new Autor ("Jessica Felix", 25, "Brasileira", true);
         Livro livro = new Livro("Java for Begginers", autor, "Tecnologia");
         Usuario usuario =  new Usuario ("Lucas Rafael", 25);
         livro.emprestar(usuario);
