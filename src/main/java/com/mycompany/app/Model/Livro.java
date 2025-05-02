@@ -1,26 +1,16 @@
 package com.mycompany.app.Model;
-public class Livro {
-    private String titulo;
-    private Autor autor;
+
+public class Livro extends Publicacao{
     private String genero;
     private boolean disponivel;
     private Usuario usuarioPosse;
     private Emprestimo emprestimo;
 
     public Livro(String titulo, Autor autor, String genero) {
-        this.titulo = titulo;
-        this.autor = autor;
+        super(titulo, autor);
         this.genero = genero;
         this.disponivel = true;
 
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public Autor getAutor() {
-        return autor;
     }
 
     public String getGenero() {
@@ -59,5 +49,15 @@ public class Livro {
         System.out.println("O livro nao esta emprestado.");
         }
     }
+
+    @Override
+    public void validarPublicacao() {
+
+        // Lógica específica de validação para Livro
+
+        System.out.println("Validando publicação de Livro...");
+
+    }
+
 
 }
