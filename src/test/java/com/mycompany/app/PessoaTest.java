@@ -2,6 +2,10 @@ package com.mycompany.app;
 
 import org.junit.Test;
 
+import com.mycompany.app.Model.Autor;
+import com.mycompany.app.Model.Livro;
+import com.mycompany.app.Model.Pessoa;
+
 import static org.junit.Assert.*;
 
 

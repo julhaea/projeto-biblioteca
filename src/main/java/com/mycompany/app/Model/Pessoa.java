@@ -1,4 +1,4 @@
-package com.mycompany.app;
+package com.mycompany.app.Model;
 
 public class Pessoa {
     protected String nome;

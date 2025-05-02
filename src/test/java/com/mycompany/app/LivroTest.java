@@ -6,6 +6,10 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import com.mycompany.app.Model.Autor;
+import com.mycompany.app.Model.Livro;
+import com.mycompany.app.Model.Usuario;
+
 public class LivroTest {
     @Test
     public void testGetTitulo() {

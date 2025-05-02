@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import com.mycompany.app.Model.Autor;
+
 public class AutorTest {
     @Test
     public void testSetNome() {

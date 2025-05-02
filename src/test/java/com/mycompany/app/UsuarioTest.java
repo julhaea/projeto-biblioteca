@@ -3,6 +3,12 @@ package com.mycompany.app;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import com.mycompany.app.Model.Autor;
+import com.mycompany.app.Model.Emprestimo;
+import com.mycompany.app.Model.Livro;
+import com.mycompany.app.Model.Usuario;
+
 import java.util.List;
 import java.util.ArrayList;
 
