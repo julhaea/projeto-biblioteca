@@ -14,4 +14,5 @@ public class Autor extends Pessoa  {
     public void setNacionalidade(String nacionalidade) {
         this.nacionalidade = nacionalidade;
     }
+    
 }

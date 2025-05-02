@@ -21,4 +21,6 @@ jobs:
           cache: 'maven'  # Mantém o cache, mas agora com v3 funciona melhor
 
       - name: Build with Maven
-        run: mvn -B package --file pom.xml  # Adicione flags para maior confiabilidade
+        run: mvn -B clean verify
+        env:
+          MAVEN_OPTS: -Djavax.net.ssl.trustStorePassword=changeit
