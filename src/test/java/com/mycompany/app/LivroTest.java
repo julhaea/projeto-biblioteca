@@ -39,7 +39,7 @@ public class LivroTest {
     public void testGetDisponivel() {
         Autor autor = new Autor("Alan Turing", 50, "Inglês", true);
         Livro livro = new Livro("Java Basics", autor, "Tecnologia");
-        assertTrue(livro.getDisponivel());
+        assertFalse(livro.getDisponivel());
 
     }
 

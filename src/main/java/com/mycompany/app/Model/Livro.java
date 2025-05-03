@@ -9,7 +9,7 @@ public class Livro extends Publicacao{
     public Livro(String titulo, Autor autor, String genero) {
         super(titulo, autor);
         this.genero = genero;
-        this.disponivel = true;
+        this.disponivel = false;
 
     }
 

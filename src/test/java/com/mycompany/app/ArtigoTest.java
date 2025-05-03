@@ -11,7 +11,7 @@ public class ArtigoTest {
     @Test
     public void testGetGenero() {
         Autor autor = new Autor("Lucas Rafael", 21, "Brasileiro", false);
-        Artigo artigo = new Artigo("Entendendo Compiladores", autor, "Tecnologia", true);
+        Artigo artigo = new Artigo("Entendendo Compiladores", autor, "Tecnologia");
         assertEquals("Tecnologia", artigo.getGenero());
 
     }
@@ -19,7 +19,7 @@ public class ArtigoTest {
     @Test
     public void testIsPublicado() {
         Autor autor = new Autor("Lucas Rafael", 21, "Brasileiro", false);
-        Artigo artigo = new Artigo("Entendendo Compiladores", autor, "Tecnologia", true);
+        Artigo artigo = new Artigo("Entendendo Compiladores", autor, "Tecnologia");
         assertTrue(artigo.isPublicado());
 
     }
@@ -27,7 +27,7 @@ public class ArtigoTest {
     @Test
     public void testGetTitulo() {
         Autor autor = new Autor("Lucas Rafael", 21, "Brasileiro", false);
-        Artigo artigo = new Artigo("Entendendo Compiladores", autor, "Tecnologia", true);
+        Artigo artigo = new Artigo("Entendendo Compiladores", autor, "Tecnologia");
         assertEquals("Entendendo Compiladores", artigo.getTitulo());
 
     }
@@ -35,7 +35,7 @@ public class ArtigoTest {
     @Test
     public void testGetAutor() {
         Autor autor = new Autor("Lucas Rafael", 21, "Brasileiro", false);
-        Artigo artigo = new Artigo("Entendendo Compiladores", autor, "Tecnologia", true);
+        Artigo artigo = new Artigo("Entendendo Compiladores", autor, "Tecnologia");
         assertEquals(autor, artigo.getAutor());
 
     }

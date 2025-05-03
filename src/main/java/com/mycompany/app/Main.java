@@ -3,15 +3,21 @@ package com.mycompany.app;
 import com.mycompany.app.Model.Artigo;
 import com.mycompany.app.Model.Autor;
 import com.mycompany.app.Model.Emprestimo;
+import com.mycompany.app.Model.EstrategiaPublicacaoArtigo;
+import com.mycompany.app.Model.EstrategiaPublicacaoLivro;
 import com.mycompany.app.Model.Livro;
 import com.mycompany.app.Model.Usuario;
+import com.mycompany.app.interfaces.*;
 
 public class Main {
     public static void main (String[] args) {
         Autor autor = new Autor ("Jessica Felix", 36, "Brasileira", true);
         Livro livro = new Livro("Java for Begginers", autor, "Tecnologia");
         Usuario usuario =  new Usuario ("Lucas Rafael", 25);
-        Artigo artigo = new Artigo ("Entendendo Compiladores", new Autor (usuario.getNome(), usuario.getIdade(), "Brasileiro", false), "Tecnologia", true);
+        Artigo artigo = new Artigo ("Entendendo Compiladores", new Autor (usuario.getNome(), usuario.getIdade(), "Brasileiro", false), "Tecnologia");
+        
+        PublicavelInterface publicLivro = new EstrategiaPublicacaoLivro(livro);
+        publicLivro.publicar();
 
 
         livro.emprestar(usuario);
@@ -32,6 +38,10 @@ public class Main {
             System.out.println("Data de Retirada: " + emp.getDataRetirada());
             System.out.println("Data de Devolucao: " + emp.getDataDevolucao());
         }
+
+        PublicavelInterface publicArtigo = new EstrategiaPublicacaoArtigo(artigo);
+        
+        publicArtigo.publicar();
 
         if (artigo.isPublicado()){
             

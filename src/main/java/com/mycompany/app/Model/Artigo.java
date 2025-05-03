@@ -6,10 +6,10 @@ public class Artigo extends Publicacao{
     private boolean publicado;
 
 
-    public Artigo(String título, Autor autor, String genero, boolean publicado){
+    public Artigo(String título, Autor autor, String genero){
         super(título, autor);
         this.genero = genero;
-        this.publicado = publicado;
+        this.publicado = false;
     }
 
 
@@ -20,6 +20,10 @@ public class Artigo extends Publicacao{
 
     public boolean isPublicado() {
         return publicado;
+    }
+
+    public void setPublicado(boolean publicado){
+        this.publicado = publicado;
     }
 
 
