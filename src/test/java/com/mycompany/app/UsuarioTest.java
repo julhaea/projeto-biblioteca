@@ -6,8 +6,10 @@ import org.junit.Test;
 
 import com.mycompany.app.Model.Autor;
 import com.mycompany.app.Model.Emprestimo;
+import com.mycompany.app.Model.EstrategiaPublicacaoLivro;
 import com.mycompany.app.Model.Livro;
 import com.mycompany.app.Model.Usuario;
+import com.mycompany.app.interfaces.PublicavelInterface;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -30,6 +32,8 @@ public class UsuarioTest {
         Autor autor = new Autor ("Jessica Felix", 25, "Brasileira", true);
         Livro livro = new Livro("Java for Begginers", autor, "Tecnologia");
         Usuario usuario =  new Usuario ("Lucas Rafael", 25);
+        PublicavelInterface publicLivro = new EstrategiaPublicacaoLivro(livro);
+        publicLivro.publicar();
         livro.emprestar(usuario);
         Emprestimo emprestimo = new Emprestimo(livro, usuario);
         List<Emprestimo> historico = new ArrayList<>();
