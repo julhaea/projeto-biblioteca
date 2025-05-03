@@ -5,6 +5,8 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import com.mycompany.app.Model.Autor;
+import com.mycompany.app.Model.EstrategiaPublicacaoArtigo;
+import com.mycompany.app.interfaces.PublicavelInterface;
 import com.mycompany.app.Model.Artigo;
 
 public class ArtigoTest {
@@ -20,6 +22,8 @@ public class ArtigoTest {
     public void testIsPublicado() {
         Autor autor = new Autor("Lucas Rafael", 21, "Brasileiro", false);
         Artigo artigo = new Artigo("Entendendo Compiladores", autor, "Tecnologia");
+        PublicavelInterface publicArtigo = new EstrategiaPublicacaoArtigo(artigo);
+        publicArtigo.publicar();
         assertTrue(artigo.isPublicado());
 
     }

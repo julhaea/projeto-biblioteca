@@ -40,7 +40,6 @@ public class Main {
         }
 
         PublicavelInterface publicArtigo = new EstrategiaPublicacaoArtigo(artigo);
-        
         publicArtigo.publicar();
 
         if (artigo.isPublicado()){

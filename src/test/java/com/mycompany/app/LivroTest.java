@@ -7,8 +7,10 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import com.mycompany.app.Model.Autor;
+import com.mycompany.app.Model.EstrategiaPublicacaoLivro;
 import com.mycompany.app.Model.Livro;
 import com.mycompany.app.Model.Usuario;
+import com.mycompany.app.interfaces.PublicavelInterface;
 
 public class LivroTest {
     @Test
@@ -47,8 +49,8 @@ public class LivroTest {
     public void testSetDisponivel() {
         Autor autor = new Autor("Alan Turing", 50, "Inglês", true);
         Livro livro = new Livro("Java Basics", autor, "Tecnologia");
-        livro.setDisponivel(false);
-        assertFalse(livro.getDisponivel());
+        livro.setDisponivel(true);
+        assertTrue(livro.getDisponivel());
 
     }
 
@@ -57,6 +59,8 @@ public class LivroTest {
         Autor autor = new Autor("Alan Turing", 50, "Inglês", true);
         Livro livro = new Livro("Java Basics", autor, "Tecnologia");
         Usuario usuario = new Usuario("Gabriel", 21);
+        PublicavelInterface publicLivro = new EstrategiaPublicacaoLivro(livro);
+        publicLivro.publicar();
         livro.emprestar(usuario);
         assertFalse(livro.getDisponivel());
 
@@ -67,6 +71,8 @@ public class LivroTest {
         Autor autor = new Autor("Alan Turing", 50, "Inglês", true);
         Livro livro = new Livro("Java Basics", autor, "Tecnologia");
         Usuario usuario = new Usuario("Gabriel", 21);
+        PublicavelInterface publicLivro = new EstrategiaPublicacaoLivro(livro);
+        publicLivro.publicar();
         livro.emprestar(usuario);
         livro.devolver();
         assertTrue(livro.getDisponivel());
