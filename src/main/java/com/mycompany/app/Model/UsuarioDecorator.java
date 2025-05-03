@@ -1,20 +1,22 @@
 package com.mycompany.app.Model;
 
 import com.mycompany.app.interfaces.PublicavelInterface;
+import com.mycompany.app.interfaces.*;
 
-class UsuarioDecorator implements PublicavelInterface {
-    private PublicavelInterface usuario;
+public class UsuarioDecorator implements PublicavelInterface {
+    private AutorInterface usuario;
     private PublicavelInterface estrategiaPublicacao;
 
 
-    public UsuarioDecorator(PublicavelInterface usuario) {
+    public UsuarioDecorator(AutorInterface usuario) {
         this.usuario = usuario;
 
     }
 
 
-    public void publicar() {
-        usuario.publicar();
+    @Override
+    public void publicar(Publicacao publicacao) {
+        estrategiaPublicacao.publicar(publicacao);
         System.out.println("Publicando como usuário...");
 
     }
@@ -23,6 +25,7 @@ class UsuarioDecorator implements PublicavelInterface {
         this.estrategiaPublicacao = estrategia;
     }
 
-
-
+    public PublicavelInterface getEstrategiaPublicacao(){
+        return estrategiaPublicacao;
+    }
 }

@@ -15,9 +15,8 @@ public class Main {
         Livro livro = new Livro("Java for Begginers", autor, "Tecnologia");
         Usuario usuario =  new Usuario ("Lucas Rafael", 25);
         Artigo artigo = new Artigo ("Entendendo Compiladores", new Autor (usuario.getNome(), usuario.getIdade(), "Brasileiro", false), "Tecnologia");
-        
-        PublicavelInterface publicLivro = new EstrategiaPublicacaoLivro(livro);
-        publicLivro.publicar();
+        PublicavelInterface publicLivro = new EstrategiaPublicacaoLivro();
+        publicLivro.publicar(livro);
 
 
         livro.emprestar(usuario);
@@ -25,7 +24,7 @@ public class Main {
         livro.devolver();
 
         if (livro.getDisponivel()) {
-            System.out.println("O livro nao esta disponivel");
+            System.out.println("O livro está disponivel");
             System.out.println("Livro: " + livro.getTitulo());
             System.out.println("Autor: " + livro.getAutor().getNome());
             System.out.println("Genero: " + livro.getGenero());
@@ -39,8 +38,8 @@ public class Main {
             System.out.println("Data de Devolucao: " + emp.getDataDevolucao());
         }
 
-        PublicavelInterface publicArtigo = new EstrategiaPublicacaoArtigo(artigo);
-        publicArtigo.publicar();
+        PublicavelInterface publicArtigo = new EstrategiaPublicacaoArtigo();
+        publicArtigo.publicar(artigo);
 
         if (artigo.isPublicado()){
             

@@ -22,8 +22,8 @@ public class ArtigoTest {
     public void testIsPublicado() {
         Autor autor = new Autor("Lucas Rafael", 21, "Brasileiro", false);
         Artigo artigo = new Artigo("Entendendo Compiladores", autor, "Tecnologia");
-        PublicavelInterface publicArtigo = new EstrategiaPublicacaoArtigo(artigo);
-        publicArtigo.publicar();
+        PublicavelInterface publicArtigo = new EstrategiaPublicacaoArtigo();
+        publicArtigo.publicar(artigo);
         assertTrue(artigo.isPublicado());
 
     }

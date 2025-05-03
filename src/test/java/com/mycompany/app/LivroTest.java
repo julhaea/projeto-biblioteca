@@ -59,8 +59,8 @@ public class LivroTest {
         Autor autor = new Autor("Alan Turing", 50, "Inglês", true);
         Livro livro = new Livro("Java Basics", autor, "Tecnologia");
         Usuario usuario = new Usuario("Gabriel", 21);
-        PublicavelInterface publicLivro = new EstrategiaPublicacaoLivro(livro);
-        publicLivro.publicar();
+        PublicavelInterface publicLivro = new EstrategiaPublicacaoLivro();
+        publicLivro.publicar(livro);
         livro.emprestar(usuario);
         assertFalse(livro.getDisponivel());
 
@@ -71,8 +71,8 @@ public class LivroTest {
         Autor autor = new Autor("Alan Turing", 50, "Inglês", true);
         Livro livro = new Livro("Java Basics", autor, "Tecnologia");
         Usuario usuario = new Usuario("Gabriel", 21);
-        PublicavelInterface publicLivro = new EstrategiaPublicacaoLivro(livro);
-        publicLivro.publicar();
+        PublicavelInterface publicLivro = new EstrategiaPublicacaoLivro();
+        publicLivro.publicar(livro);
         livro.emprestar(usuario);
         livro.devolver();
         assertTrue(livro.getDisponivel());

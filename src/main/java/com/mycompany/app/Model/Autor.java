@@ -26,5 +26,11 @@ public class Autor extends Pessoa implements PublicavelInterface {
     public void setNacionalidade(String nacionalidade) {
         this.nacionalidade = nacionalidade;
     }
+
+    @Override
+    public void publicar(Publicacao publicacao) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'publicar'");
+    }
     
 }

@@ -3,14 +3,9 @@ package com.mycompany.app.Model;
 import com.mycompany.app.interfaces.PublicavelInterface;
 
 public class EstrategiaPublicacaoArtigo implements PublicavelInterface{
-    private Artigo artigo;
 
-    public EstrategiaPublicacaoArtigo(Artigo artigo) {
-        this.artigo = artigo;
-
-    }
-
-    public void publicar() {
+    public void publicar(Publicacao publicacao) {
+        Artigo artigo = (Artigo) publicacao;
         artigo.setPublicado(true);
         System.out.println("Publicando artigo...");
 
